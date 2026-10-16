@@ -166,6 +166,13 @@ class ESP32FirmwareEmulator:
         self.red_led = True
         self.buzzer_active = True
 
+        # Acoustic feedback simulation (Piezo Buzzer 2.4kHz)
+        try:
+            import winsound
+            winsound.Beep(2400, 120)
+        except Exception:
+            pass
+
         # REQ-006: Log state transition
         self._log_uart(
             f"[STATE_TRANSITION] {old_state} -> {FirmwareState.STATE_ALARM} "

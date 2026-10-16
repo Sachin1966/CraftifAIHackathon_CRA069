@@ -4,23 +4,15 @@ import {
   Camera, 
   Upload, 
   Play, 
-  Pause, 
-  RotateCcw, 
-  Cpu, 
-  Layers, 
-  AlertCircle, 
-  CheckCircle2, 
-  Crosshair 
+  Pause 
 } from 'lucide-react';
 
-export default function VideoSentinel({ onBreachDetected, onClearDetected }) {
+export default function VideoSentinel() {
   const [sourceMode, setSourceMode] = useState('cctv'); // 'cctv', 'webcam', 'upload'
   const [isPlaying, setIsPlaying] = useState(true);
-  const [fps, setFps] = useState(29.8);
-  const [inferenceTime, setInferenceTime] = useState(13.5);
-  const [detectionsCount, setDetectionsCount] = useState(1);
+  const [fps] = useState(29.8);
+  const [inferenceTime] = useState(13.5);
   const [uploadFileName, setUploadFileName] = useState(null);
-  const [isUploading, setIsUploading] = useState(false);
 
   const videoRef = useRef(null);
   const canvasRef = useRef(null);

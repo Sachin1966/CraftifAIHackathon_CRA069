@@ -7,17 +7,14 @@ import ProtocolInspector from './components/ProtocolInspector';
 import { 
   startAlarmBuzzer, 
   stopAlarmBuzzer, 
-  setAudioEnabled, 
-  getAudioEnabled 
+  setAudioEnabled 
 } from './utils/audio';
 import { 
   Map, 
   Video, 
   Terminal, 
   FileCode, 
-  Cpu, 
-  ShieldCheck, 
-  AlertTriangle 
+  ShieldCheck 
 } from 'lucide-react';
 
 const API_BASE = 'http://localhost:8000';
@@ -136,7 +133,7 @@ export default function App() {
         setIsConnected(false);
         ws.close();
       };
-    } catch (e) {
+    } catch {
       setIsConnected(false);
     }
   }, []);

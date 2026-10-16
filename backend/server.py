@@ -291,15 +291,13 @@ async def get_telemetry():
         "free_heap_bytes": telemetry.free_heap_bytes,
         "state": telemetry.state,
         "stats": {
-            "events_processed": telemetry.stats.events_processed,
-            "events_dropped": telemetry.stats.events_dropped,
-            "actuator_triggers": telemetry.stats.actuator_triggers,
-            "buffer_overruns": telemetry.stats.buffer_overruns,
+            "total_events_received": telemetry.stats.total_events_received,
+            "duplicate_events_dropped": telemetry.stats.duplicate_events_dropped,
+            "malformed_events_rejected": telemetry.stats.malformed_events_rejected,
         },
         "actuators": {
             "red_led": telemetry.actuators.red_led,
-            "buzzer": telemetry.actuators.buzzer,
-            "relay": telemetry.actuators.relay,
+            "buzzer_active": telemetry.actuators.buzzer_active,
         },
     }
 
